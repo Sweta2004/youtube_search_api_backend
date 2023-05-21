@@ -7,7 +7,7 @@ const app = express();
 const FuzzySet = require('fuzzyset');
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://admin:S123456b@swetacluster.jdyv5bg.mongodb.net/youtube_search?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://<username>:<password>@swetacluster.jdyv5bg.mongodb.net/<database_name>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -27,7 +27,7 @@ const videoSchema = new mongoose.Schema({
 const Video = mongoose.model('Video', videoSchema);
 
 // Set up YouTube Data API
-const youtubeApiKey = 'AIzaSyAIfwtCMCETLOYVxhbwPG2YzNJwlj5369Q';
+const youtubeApiKey = '<youtube data api key>';
 const youtube = google.youtube({
   version: 'v3',
   auth: youtubeApiKey,
